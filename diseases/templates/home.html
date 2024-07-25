@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Disease Information</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'diseases/home1.css' %}">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  -->
+    
+      
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Disease Info</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'by_category' %}">By Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'by_symptom' %}">By Symptom</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'by_medicine' %}">By Medicine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'all_diseases' %}">All Diseases</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Welcome to Disease Information</h1>
+        <p class="lead">Your go-to source for comprehensive information about diseases. Explore by category, symptom, or medicine.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'by_category' %}" role="button">By Category</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'by_symptom' %}" role="button">By Symptom</a>
+        <a class="btn btn-info btn-lg" href="{% url 'by_medicine' %}" role="button">By Medicine</a>
+        <a class="btn btn-dark btn-lg" href="{% url 'all_diseases' %}" role="button">All Diseases</a>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Category</h5>
+                        <p class="card-text">Browse diseases categorized for easy navigation.</p>
+                        <a href="{% url 'by_category' %}" class="btn btn-outline-primary">Browse Categories</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Symptom</h5>
+                        <p class="card-text">Find diseases by their symptoms for better diagnosis.</p>
+                        <a href="{% url 'by_symptom' %}" class="btn btn-outline-secondary">Browse Symptoms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Medicine</h5>
+                        <p class="card-text">Explore diseases based on available treatments and medicines.</p>
+                        <a href="{% url 'by_medicine' %}" class="btn btn-outline-info">Browse Medicines</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-light mt-4 py-3">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Disease Info</span>
+        </div>
+    </footer>
+
+    <div class="disclaimer">
+        <marquee behavior="" direction=""><p>Disclaimer: "This website data is only for information purposes. Please consult a Doctor before concluding anything."</p></marquee>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

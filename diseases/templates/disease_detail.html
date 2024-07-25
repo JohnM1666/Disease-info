@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ disease.name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'diseases/disease_detail.css' %}">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'home' %}">Disease Info</a>
+    </nav>
+    <div class="disclaimer">
+        <marquee behavior="" direction=""><p>Disclaimer: "This website data is only for information purposes. Please consult a Doctor before concluding anything."</p></marquee>
+    </div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">{{ disease.name }}</h1>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>Description:</strong> {{ disease.description }}</p>
+                <p class="card-text"><strong>Symptoms:</strong></p>
+                <ul class="list-group mb-3">
+                    {% for symptom in disease.symptoms.all %}
+                        <li class="list-group-item">{{ symptom.name }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="card-text"><strong>Cause:</strong> {{ disease.cause }}</p>
+                <p class="card-text"><strong>Precaution:</strong> {{ disease.precaution }}</p>
+                <p class="card-text"><strong>Medicines:</strong></p>
+                <ul class="list-group">
+                    {% for medicine in disease.medicines.all %}
+                        <li class="list-group-item">{{ medicine.name }}</li>
+                    {% empty %}
+                        <li class="list-group-item">No specific medicines available</li>
+                    {% endfor %}
+                </ul>
+                <a href="javascript:history.back()" class="btn btn-primary mt-3">Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

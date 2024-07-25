@@ -1,0 +1,54 @@
+/* styles.css */
+
+/* Your custom styles here */
+
+/* Bootstrap CSS copied inline */
+/* You can obtain the minified Bootstrap CSS from https://getbootstrap.com/docs/4.5/getting-started/download/ */
+/* Below is an example with a portion of Bootstrap's CSS */
+/* Please note that you should copy the entire minified CSS for completeness */
+
+/* Bootstrap v4.5.2 (https://getbootstrap.com/docs/4.5/) */
+/* Bootstrap Core CSS */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+/* Your custom styles here */
+.jumbotron {
+    background: url('https://example.com/your-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #e1e1e1;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #5a5555;
+    border-radius: .3rem;
+}
+
+.jumbotron .display-4 {
+    font-weight: 700;
+}
+
+.disclaimer {
+    background-color: #ffcccb;
+    color: #333;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.disclaimer p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
+    margin: 0;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
